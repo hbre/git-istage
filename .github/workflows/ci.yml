@@ -65,7 +65,7 @@ jobs:
         name: published-build
         path: ${{ env.BIN }}
     - name: Push package to GPR
-      run: dotnet nuget push $BIN*.nupkg --source https://nuget.pkg.github.com/terrajobst/index.json --api-key ${{ github.token }} --skip-duplicate
+      run: dotnet nuget push $BIN*.nupkg --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json --api-key ${{ github.token }} --skip-duplicate
 
   upload-nuget:
     runs-on: ubuntu-latest
